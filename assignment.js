@@ -1,10 +1,10 @@
 // problem - 1: anaToVori
 function anaToVori(ana) {
     // check if parameter is a positive number
-    if (typeof ana == 'number' && ana > 0) {
-        return ana / 16;        // 1 vori = 16 ana
+    if (typeof ana == 'number' && ana >= 0) {
+        return ana / 16;    // 1 vori = 16 ana
     }
-    else {          // else send error
+    else {      // else send error
         return "Invalid Parameter! Please Pass A Positive Number as Aana";
     }
 }

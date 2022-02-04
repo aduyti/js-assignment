@@ -4,37 +4,52 @@ function anaToVori(ana) {
     if (typeof ana == 'number' && ana > 0) {
         return ana / 16;        // 1 vori = 16 ana
     }
-    return "Invalid Parameter! Please Pass A Positive Number as Aana";
+    else {          // else send error
+        return "Invalid Parameter! Please Pass A Positive Number as Aana";
+    }
 }
 
 // problem - 2: pandaCost
 function pandaCost(noOfShingara, noOfShomucha, noOfJilapi) {
+    // items' unit proce
     const shingaraPrice = 7;
     const shomuchaPrice = 10;
     const jilapiPrice = 15;
 
+    // check if any of the three items' quantity is not a positive integer number to send error
     if (typeof noOfShingara != 'number' || typeof noOfShomucha != 'number' || typeof noOfJilapi != 'number'
         || noOfShingara < 0 || noOfShomucha < 0 || noOfJilapi < 0
         || !Number.isInteger(noOfShingara) || !Number.isInteger(noOfShomucha) || !Number.isInteger(noOfJilapi)) {
-        return "Invalid Parameter! Please Pass Positive Integer Numbers";
+
+        return "Invalid Parameter! Please Pass Positive Integer Numbers for Each Items";
     }
+
     return (shingaraPrice * noOfShingara) + (shomuchaPrice * noOfShomucha) + (jilapiPrice * noOfJilapi);
 }
 
 // problem - 3: picnicBudget
 function picnicBudget(numberOfPeople) {
     var totalCost = 0;
-    if (numberOfPeople <= 100) {
+
+    // check if Number of People is not a positive integer number to send error
+    if (typeof (numberOfPeople) != 'number' || numberOfPeople < 0 || !Number.isInteger(numberOfPeople)) {
+        return "Invalid Parameter! Please Pass A Positive Integer Number";
+    }
+
+
+    if (numberOfPeople <= 100) {    // 100 or less people
         totalCost = numberOfPeople * 5000;
     }
-    else if (numberOfPeople > 100 && numberOfPeople <= 200) {
-        totalCost = 100 * 5000;
-        totalCost += (numberOfPeople - 100) * 4000;
+    else if (numberOfPeople > 100 && numberOfPeople <= 200) {   // 101-200 people
+
+        totalCost = 100 * 5000;     // cost for first 100 people
+        totalCost += (numberOfPeople - 100) * 4000; // added cost for remaining people
     }
-    else if (numberOfPeople > 200) {
-        totalCost = 100 * 5000;
-        totalCost = 100 * 4000;
-        totalCost += (numberOfPeople - 200) * 3000;
+    else if (numberOfPeople > 200) {    // 201 or more people
+
+        totalCost = 100 * 5000;     // cost for first 100 people
+        totalCost += 100 * 4000;     // added cost for next 100 people
+        totalCost += (numberOfPeople - 200) * 3000; // added cost for remaining people
     }
     return totalCost;
 }
@@ -49,4 +64,4 @@ function oddFriend(names) {
     return "No Odd Friend Found";
 }
 
-console.log(pandaCost(5, 0, 1));
+console.log(picnicBudget(20));

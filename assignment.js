@@ -16,7 +16,7 @@ function pandaCost(noOfShingara, noOfShomucha, noOfJilapi) {
     const shomuchaPrice = 10;
     const jilapiPrice = 15;
 
-    // check if any of the three items' quantity is not a positive integer number to send error
+    // check if any of the parameters is not a positive integer number to send error
     if (typeof noOfShingara != 'number' || typeof noOfShomucha != 'number' || typeof noOfJilapi != 'number'
         || noOfShingara < 0 || noOfShomucha < 0 || noOfJilapi < 0
         || !Number.isInteger(noOfShingara) || !Number.isInteger(noOfShomucha) || !Number.isInteger(noOfJilapi)) {
@@ -31,7 +31,7 @@ function pandaCost(noOfShingara, noOfShomucha, noOfJilapi) {
 function picnicBudget(numberOfPeople) {
     var totalCost = 0;
 
-    // check if Number of People is not a positive integer number to send error
+    // check if parameter is not a positive integer number to send error
     if (typeof (numberOfPeople) != 'number' || numberOfPeople < 0 || !Number.isInteger(numberOfPeople)) {
         return "Invalid Parameter! Please Pass A Positive Integer Number";
     }
@@ -56,12 +56,16 @@ function picnicBudget(numberOfPeople) {
 
 // problem - 4: oddFriend
 function oddFriend(names) {
+
+    // check if parameter is not an array or empty to send error
+    if (typeof (names) != 'object' || names.length == 0) {
+        return "Invalid Parameter! Please Pass An Array of Strings."
+    }
+
     for (const name of names) {
-        if (name.length % 2 == 1) {
+        if (name.length % 2 == 1) { // if odd name length found
             return name;
         }
     }
-    return "No Odd Friend Found";
+    return "No Odd Friend Found";   // if no odd name length found in array
 }
-
-console.log(picnicBudget(20));

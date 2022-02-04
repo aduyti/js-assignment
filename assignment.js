@@ -1,8 +1,9 @@
-console.log("hello".length);
-
-// problem - 1: ana to vori
+// problem - 1: anaToVori
 function anaToVori(ana) {
-    return ana / 16;
+    if (typeof ana == 'number' && ana > 0) {
+        return ana / 16;
+    }
+    return "Invalid Parameter! Please Pass A Positive Number";
 }
 
 // problem - 2: pandaCost
@@ -40,3 +41,5 @@ function oddFriend(names) {
     }
     return "No Odd Friend Found";
 }
+
+// console.log("hello".length);

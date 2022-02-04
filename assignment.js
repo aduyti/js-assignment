@@ -1,4 +1,4 @@
-// console.log("hello");
+console.log("hello".length);
 
 // problem - 1: ana to vori
 function anaToVori(ana) {
@@ -33,5 +33,10 @@ function picnicBudget(numberOfPeople) {
 
 // problem - 4: oddFriend
 function oddFriend(names) {
-    return friends;
+    for (const name of names) {
+        if (name.length % 2 == 1) {
+            return name;
+        }
+    }
+    return "No Odd Friend Found";
 }

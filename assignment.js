@@ -2,14 +2,15 @@
 
 // problem - 1: ana to vori
 function anaToVori(ana) {
-    let vori = 0;
-    return vori;
+    return ana / 16;
 }
 
 // problem - 2: pandaCost
-function pandaCost(shingara, shomucha, jilapi) {
-    let totalCost = 0;
-    return totalCost;
+function pandaCost(noOfShingara, noOfShomucha, noOfJilapi) {
+    const shingaraPrice = 7;
+    const shomuchaPrice = 10;
+    const jilapiPrice = 15;
+    return (shingaraPrice * noOfShingara) + (shomuchaPrice * noOfShomucha) + (jilapiPrice * noOfJilapi);
 }
 
 // problem - 3: picnicBudget
@@ -18,6 +19,6 @@ function picnicBudget(numberOfPeople) {
 }
 
 // problem - 4: oddFriend
-function oddFriend(numberOfPeople) {
+function oddFriend(names) {
     return friends;
 }

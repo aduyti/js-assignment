@@ -15,6 +15,19 @@ function pandaCost(noOfShingara, noOfShomucha, noOfJilapi) {
 
 // problem - 3: picnicBudget
 function picnicBudget(numberOfPeople) {
+    var totalCost = 0;
+    if (numberOfPeople <= 100) {
+        totalCost = numberOfPeople * 5000;
+    }
+    else if (numberOfPeople > 100 && numberOfPeople <= 200) {
+        totalCost = 100 * 5000;
+        totalCost += (numberOfPeople - 100) * 4000;
+    }
+    else if (numberOfPeople > 200) {
+        totalCost = 100 * 5000;
+        totalCost = 100 * 4000;
+        totalCost += (numberOfPeople - 200) * 3000;
+    }
     return totalCost;
 }
 
